@@ -101,6 +101,7 @@ kotlin {
                 api(compose.material)
                 api(compose.ui)
                 api(compose.uiTooling)
+                implementation libs.napier
             }
         }
 
