@@ -78,6 +78,8 @@ android {
             res.srcDirs += 'src/sharedTest/res'
         }
     }
+
+    sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
 }
 
 kotlin {
