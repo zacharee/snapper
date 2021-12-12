@@ -20,6 +20,9 @@ buildscript {
     repositories {
         google()
         mavenCentral()
+        maven {
+            url "https://maven.pkg.jetbrains.space/public/p/compose/dev"
+        }
     }
 
     dependencies {
@@ -32,6 +35,8 @@ buildscript {
         classpath libs.dokka
 
         classpath libs.metalavaGradle
+
+        classpath libs.composePlugin
     }
 }
 
@@ -50,6 +55,10 @@ allprojects {
     repositories {
         google()
         mavenCentral()
+
+        maven {
+            url "https://maven.pkg.jetbrains.space/public/p/compose/dev"
+        }
 
         def composeSnapshot = libs.versions.composesnapshot.get()
         if (composeSnapshot.length() > 1) {
