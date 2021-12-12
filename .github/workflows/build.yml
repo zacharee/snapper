@@ -39,9 +39,9 @@ jobs:
           gradle-dependencies-cache-key: |
             gradle/libs.versions.toml
           arguments: |
-            spotlessCheck
+#            spotlessCheck
             assemble
-            metalavaCheckCompatibility
+#            metalavaCheckCompatibility
             testDebug
             lintDebug
 

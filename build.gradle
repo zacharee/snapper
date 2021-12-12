@@ -34,15 +34,15 @@ buildscript {
 
         classpath libs.dokka
 
-        classpath libs.metalavaGradle
+//        classpath libs.metalavaGradle
 
         classpath libs.composePlugin
     }
 }
 
-plugins {
-    id "com.diffplug.spotless" version "5.9.0"
-}
+//plugins {
+//    id "com.diffplug.spotless" version "5.9.0"
+//}
 
 apply plugin: 'org.jetbrains.dokka'
 
@@ -68,21 +68,21 @@ allprojects {
 }
 
 subprojects {
-    apply plugin: 'com.diffplug.spotless'
-    spotless {
-        kotlin {
-            target "**/*.kt"
-            ktlint(libs.versions.ktlint.get())
-            licenseHeaderFile rootProject.file('spotless/copyright.txt')
-        }
-
-        groovyGradle {
-            target '**/*.gradle'
-            greclipse().configFile(rootProject.file('spotless/greclipse.properties'))
-            licenseHeaderFile rootProject.file('spotless/copyright.txt'),
-                    '(buildscript|apply|import|plugins)'
-        }
-    }
+//    apply plugin: 'com.diffplug.spotless'
+//    spotless {
+//        kotlin {
+//            target "**/*.kt"
+//            ktlint(libs.versions.ktlint.get())
+//            licenseHeaderFile rootProject.file('spotless/copyright.txt')
+//        }
+//
+//        groovyGradle {
+//            target '**/*.gradle'
+//            greclipse().configFile(rootProject.file('spotless/greclipse.properties'))
+//            licenseHeaderFile rootProject.file('spotless/copyright.txt'),
+//                    '(buildscript|apply|import|plugins)'
+//        }
+//    }
 
     tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach { compile ->
         kotlinOptions {
@@ -104,12 +104,12 @@ subprojects {
 
     // If we have a POM Artifact ID, we should generate API files
     if (project.hasProperty('POM_ARTIFACT_ID')) {
-        apply plugin: 'me.tylerbwong.gradle.metalava'
+//        apply plugin: 'me.tylerbwong.gradle.metalava'
 
-        metalava {
-            filename = "api/current.api"
-            reportLintsAsErrors = true
-        }
+//        metalava {
+//            filename = "api/current.api"
+//            reportLintsAsErrors = true
+//        }
     }
 
     // Must be afterEvaluate or else com.vanniktech.maven.publish will overwrite our
