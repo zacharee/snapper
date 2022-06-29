@@ -36,7 +36,7 @@ buildscript {
 
 //        classpath libs.metalavaGradle
 
-        classpath libs.composePlugin
+        classpath "org.jetbrains.compose:compose-gradle-plugin:1.2.0-alpha01-dev731"
     }
 }
 

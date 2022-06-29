@@ -14,6 +14,12 @@
  * limitations under the License.
  */
 
+buildscript {
+    repositories {
+        maven { url = uri("https://maven.pkg.jetbrains.space/public/p/compose/dev") }
+    }
+}
+
 plugins {
     id 'com.android.library'
 //    id 'kotlin-android'
@@ -21,6 +27,10 @@ plugins {
     id 'org.jetbrains.kotlin.multiplatform'
     id 'org.jetbrains.compose'
     id 'maven-publish'
+}
+
+repositories {
+    maven { url = uri("https://maven.pkg.jetbrains.space/public/p/compose/dev") }
 }
 
 android {
@@ -85,6 +95,22 @@ android {
 kotlin {
     explicitApi()
 
+    macosX64 {
+
+    }
+
+    macosArm64 {
+
+    }
+
+    iosX64 {
+
+    }
+
+    iosArm64 {
+
+    }
+
     android {
 
     }
@@ -100,7 +126,7 @@ kotlin {
                 api(compose.foundation)
                 api(compose.material)
                 api(compose.ui)
-                api(compose.uiTooling)
+//                api(compose.uiTooling)
                 implementation libs.napier
             }
         }
@@ -109,7 +135,7 @@ kotlin {
             dependencies {
 //                implementation libs.compose.ui.tooling // TODO: Try and move this to debug only
 //                implementation libs.compose.material.material
-                api compose.uiTooling
+//                api compose.uiTooling
                 api libs.androidx.core
                 api libs.androidx.activity.compose
                 api libs.coil
