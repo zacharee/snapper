@@ -40,7 +40,6 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import dev.chrisbanes.snapper.sample.ui.theme.SnapperTheme
 
 class MainActivity : ComponentActivity() {
@@ -99,7 +98,6 @@ private fun Samples(appTitle: String) {
     }
 }
 
-@Preview(showBackground = true)
 @Composable
 fun DefaultPreview() {
     Samples(appTitle = "Snapper Sample")
